@@ -1,0 +1,214 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+    padding: 20px 0;
+}
+
+/* Hero */
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.hero {
+    background: linear-gradient(-45deg, #6f42c1, #5f27cd, #9b59b6, #8e44ad);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #fff;
+    padding: 120px 0;
+}
+
+.hero h1,
+.hero h3,
+.hero p,
+.hero .btn {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s forwards;
+}
+
+.hero h1 {
+    animation-delay: 0.3s;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.hero h3 {
+    animation-delay: 0.6s;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    animation-delay: 0.9s;
+}
+
+.hero .btn {
+    animation-delay: 1.2s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Sections */
+.section {
+    padding: 90px 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
+}
+
+.section.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* Skills */
+.skill-box {
+    border: 1px solid #eee;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.skill-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.progress {
+    height: 25px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.progress-bar {
+    font-weight: bold;
+    width: 0%;
+    transition: width 2s ease;
+}
+
+/* Project cards */
+.project-card {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.project-card h5::after {
+    content: '→';
+    display: inline-block;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover h5::after {
+    transform: translateX(5px) scale(1.2);
+}
+
+/* Buttons */
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:after {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s, opacity 1s;
+    opacity: 0;
+}
+
+.btn:active:after {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    transition: 0s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    transition: all 0.2s ease;
+}
+
+.btn svg {
+    transition: transform 0.3s ease;
+}
+
+.btn:hover svg {
+    transform: rotate(20deg) scale(1.1);
+}
+
+/* Profile Image */
+.hero img {
+    transition: all 0.4s ease;
+}
+
+.hero img:hover {
+    transform: scale(1.05) rotate(-2deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Contact */
+.contact-box input,
+.contact-box textarea {
+    border-radius: 10px;
+}
+
+footer {
+    background: #111;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+}
+
+/* Hero button hover gradient */
+.btn.btn-light:hover {
+    background: linear-gradient(45deg, #6f42c1, #5f27cd);
+    color: #fff;
+    transition: 0.5s;
+}
